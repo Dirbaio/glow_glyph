@@ -284,7 +284,7 @@ unsafe fn create_program(
         gl.compile_shader(shader);
 
         if !gl.get_shader_compile_status(shader) {
-            panic!(gl.get_shader_info_log(shader));
+            panic!("Cannot compile shader: {}", gl.get_shader_info_log(shader));
         }
 
         gl.attach_shader(program, shader);
